@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THƯ GỬI VỢ IU 💖</title>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ffe0e9, #ffd3ec);
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 700px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+  }
+
+  h1 {
+    text-align: center;
+    color: #d63384;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  .heart {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 40px;
+  }
+
+  .letter p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 20px;
+  }
+
+  .icons {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 24px;
+  }
+
+  .icons span {
+    margin: 0 10px;
+  }
+
+  /* Trái tim rơi */
+  .heart-fall {
+    position: fixed;
+    top: -50px;
+    font-size: 24px;
+    animation: fall 5s linear infinite;
+    z-index: 1;
+    opacity: 0.7;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translateY(110vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  /* Header lấp lánh */
+  .twinkle-header {
+    text-align: center;
+    font-size: 24px;
+    animation: twinkle 1s infinite alternate;
+    color: #ff69b4;
+    padding-top: 20px;
+  }
+
+  @keyframes twinkle {
+    from { opacity: 1; }
+    to { opacity: 0.4; }
+  }
+
+  /* Icon trái tim nhấp nháy */
+  /* .heart-blink span:nth-child(3) {
+    animation: blink 1s infinite;
+  } */
+
+  @keyframes blink {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.2; transform: scale(1.2); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+ @media screen and (max-width: 480px) {
+    h1 {
+      font-size: 1.5em;
+    }
+
+    .letter p {
+      font-size: 16px;
+    }
+
+    .icons {
+      font-size: 20px;
+    }
+
+    .heart {
+      font-size: 30px;
+      top: -10px;
+      right: -10px;
+    }
+
+    .twinkle-header {
+      font-size: 20px;
+    }
+  }
+
+  </style>
+</head>
+<body>
+  <div class="twinkle-header">✨💖✨💖✨</div>
+
+  <div class="container">
+    <div class="heart">💌</div>
+    <h1>💖 HAPPY ANNIVERSARY 💖</h1>
+    <div class="letter">
+      <p>Vợ yêu à,</p>
+
+      <p>Hôm nay là ngày rất là đặc biệt đối với chúng mình, đúng không em?
+        Vậy là chúng mình đã yêu nhau được 6 tháng ồy em nhỉ, đây không phải là một quãng thời gian quá ngắn, 
+        cũng không phải một quãng thời gian quá dài nhưng anh vẫn muốn nói một vài điều với em.</p>
+
+      <p>Cảm ơn em quãng thời gian vừa qua đã luôn yêu thương anh, quan tâm và chăm sóc anh. 
+        Anh hy vọng chúng mình sẽ giữ mãi tình yêu này và phát triển nó vững bền em nhé. </p>
+
+      <p>Anh cũng xin lỗi em vì những lần tồi tệ của anh đã khiến em buồn và phải khóc. 
+        Anh hứa anh sẽ không bao giờ mắc phải những sai lầm khiến em phải buồn và khóc nữa.</p>
+
+      <p>Anh yêu em nhiều lắm.<br>Mãi yêu em. 💖</p>
+    </div> 
+
+    <div class="icons heart-blink">
+      <span>🐰</span>
+      <span>🐻</span>
+      <span>💖</span>
+      <span>🌈</span>
+      <span>🎵</span>
+    </div>
+  </div>
+
+  <script>
+  // Hiệu ứng trái tim rơi
+  const hearts = ['💖', '💘', '💕', '❤️', '💞'];
+
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart-fall';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+    heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+
+  setInterval(createHeart, 300);
+
+  </script>
+</body>
+</html>
